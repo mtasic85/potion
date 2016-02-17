@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body_content %}
+	<h1> Welcome, {{ username }}. </h1>
+
+	<form action="/signout" method="get">
+		<input type="submit" text="Sign Out">
+	</form>
+{% endblock %}
