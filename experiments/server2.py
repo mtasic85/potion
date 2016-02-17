@@ -90,7 +90,7 @@ async def signin(request):
 
     if username == 'admin' and password == 'admin':
         print((username, password))
-        session['username'] = username
+        session['username'] = username * 500
         raise web.HTTPFound('/home')
     else:
         try:
