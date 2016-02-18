@@ -55,6 +55,12 @@ def route(method_type, method_route):
 
     return f
 
+async def get_post_params(request):
+    data = await request.payload.read()
+    data = data.decode('utf-8')
+    post_params = MultiDict(parse_qsl(data))
+    return post_params
+
 #
 # example
 #
@@ -81,10 +87,7 @@ async def signin(request):
 async def signin(request):
     print('signin')
     session = await get_session(request)
-    data = await request.payload.read()
-    data = data.decode('utf-8')
-    post_params = MultiDict(parse_qsl(data))
-
+    post_params = await get_post_params(request)
     username = post_params.get('username', None)
     password = post_params.get('password', None)
 
