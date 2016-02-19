@@ -6,3 +6,5 @@ aiohttp_jinja2
 cryptography
 aiohttp_session
 aioredis
+aiomysql
+sqlalchemy
