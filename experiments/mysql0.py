@@ -73,6 +73,6 @@ async def go(loop):
 loop = asyncio.get_event_loop()
 
 if __name__ == '__main__':
-    # loop.run_until_complete(drop_all(loop))
-    # loop.run_until_complete(create_all(loop))
+    loop.run_until_complete(drop_all(loop))
+    loop.run_until_complete(create_all(loop))
     loop.run_until_complete(go(loop))
